@@ -1,14 +1,3 @@
-;calculadora.ens - ENS2001 Ejemplo de uso - Abril 2002
-;NOTA: La ausencia de acentos es intencionada, para permitir la
-;legibilidad tanto en entornos Windows como GNU/Linux
-
-;en R0 se guarda la direccion de la funcion de operacion
-;en R1 se guarda el primer operando
-;en R2 se guarda el segundo operando
-;en A se guarda el resultado de la operacion
-;en R3 se guarda la opcion elegida por el usuario
-
-ORG 0
 
 INICIO:
 ;Muestra las operaciones por la consola
