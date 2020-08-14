@@ -29,10 +29,10 @@ INICIO:
 		BZ $OP4
 		BZ $OPERROR
 OPERANDOS:
-;primer operando - se guarda en la variable OPERANDO1
+;primer operando que se guarda en OPERANDO1
 		WRSTR /cad2
 		ININT /OPERANDO1
-;segundo operando - se guarda en la variable OPERANDO2
+;segundo operando que se guarda en OPERANDO2
 		WRSTR /cad3
 		ININT /OPERANDO2
 ;se ponen los parametros en la pila
