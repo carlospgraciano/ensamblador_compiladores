@@ -1,16 +1,19 @@
+; Miembros del grupo de compiladores
+; Carlos Polanco 19-0728
+; Francisco Florian 19-0730
+; Rosalina Norberto 19-0433
+; Ines Cuevas 15-0790
+; Jorge Cuevas 19-0459
+; Rafael Batista 19-0702
 
 INICIO:
-;Muestra las operaciones por la consola
+;Despliega todas las operaciones por consolas
 		WRSTR /menu1
 		WRSTR /menu2
 		WRSTR /menu3
 		WRSTR /menu4
-		WRSTR /menu5
-		WRSTR /menu6
-		WRSTR /menu7
-		WRSTR /menu8
 		WRSTR /menu0
-;Lectura de la operacion
+;Se lee la operacion aritmetica
 		WRSTR /cad1
 		ININT .R3
 ;Se calcula la direccion de la funcion correspondiente
@@ -24,14 +27,6 @@ INICIO:
 		BZ $OP3
 		CMP.R3,#4
 		BZ $OP4
-		CMP .R3,#5
-		BZ $OP5
-		CMP .R3,#6
-		BZ $OP6
-		CMP .R3,#7
-		BZ $OP7
-		CMP .R3,#8
-		BZ $OP8
 		BZ $OPERROR
 OPERANDOS:
 ;primer operando - se guarda en la variable OPERANDO1
@@ -77,18 +72,6 @@ OP3:
 OP4:
 		MOVE #DIVISION,.R0
 		BR /OPERANDOS
-OP5:
-		MOVE #MODULO,.R0
-		BR /OPERANDOS
-OP6:
-		MOVE #Y,.R0
-		BR /OPERANDOS
-OP7:
-		MOVE #O,.R0
-		BR /OPERANDOS
-OP8:
-		MOVE #OEX,.R0
-		BR /OPERANDOS
 OPERROR:
 		MOVE #ERROR,.R0
 		BR /OPERANDOS
@@ -105,18 +88,6 @@ PRODUCTO:
 		RET
 DIVISION:
 		DIV .R1,.R2
-		RET
-MODULO:
-		MOD .R1,.R2
-		RET
-Y:
-		AND .R1,.R2
-		RET
-O:
-		OR .R1,.R2
-		RET
-OEX :
-		XOR .R1,.R2
 		RET
 ERROR :
 		WRSTR /cad5
@@ -145,10 +116,6 @@ menu1:		DATA "1.Suma\n"
 menu2:		DATA "2.Resta\n"
 menu3:		DATA "3.Producto\n"
 menu4:		DATA "4.Division\n"
-menu5:		DATA "5.Modulo\n"
-menu6:		DATA "6.And\n"
-menu7:		DATA "7.Or\n"
-menu8:		DATA "8.Xor\n"
 menu0:		DATA "0.Salir\n"
 saltolin:	DATA "\n"
 
